@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/placeholder">
+        <fragment android:id="@+id/placeholder">
+            <action
+                android:id="@+id/action_placeholder_to_placeholder2"
+                app:destination="@+id/placeholder2" />
+            <action
+                android:id="@+id/action_placeholder_to_placeholder42"
+                app:destination="@id/placeholder4" />
+            <action
+                android:id="@+id/action_placeholder_to_navigation"
+                app:destination="@id/navigation" />
+        </fragment>
+        <fragment android:id="@+id/placeholder2">
+            <action
+                android:id="@+id/action_placeholder2_to_placeholder"
+                app:destination="@id/placeholder" />
+            <action
+                android:id="@+id/action_placeholder2_to_navigation"
+                app:destination="@id/navigation" />
+        </fragment>
+        <fragment android:id="@+id/placeholder4">
+            <action
+                android:id="@+id/action_placeholder4_to_placeholder"
+                app:destination="@id/placeholder" />
+            <action
+                android:id="@+id/action_placeholder4_to_navigation"
+                app:destination="@id/navigation" />
+        </fragment>
+
+    <navigation android:id="@+id/navigation"
+        app:startDestination="@id/placeholder5">
+        <fragment android:id="@+id/placeholder5">
+                <action
+                    android:id="@+id/action_placeholder5_to_placeholder6"
+                    app:destination="@id/placeholder6" />
+            </fragment>
+        <fragment android:id="@+id/placeholder6">
+            <action
+                android:id="@+id/action_placeholder6_to_placeholder5"
+                app:destination="@id/placeholder5" />
+        </fragment>
+        <action
+            android:id="@+id/action_global_placeholder2"
+            app:destination="@id/placeholder2" />
+        <action
+            android:id="@+id/action_global_placeholder"
+            app:destination="@id/placeholder" />
+        <action
+            android:id="@+id/action_global_placeholder4"
+            app:destination="@id/placeholder4" />
+    </navigation>
+</navigation>
