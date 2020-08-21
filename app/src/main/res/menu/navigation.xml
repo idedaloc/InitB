@@ -7,5 +7,13 @@
         android:id="@+id/home"
         android:icon="@drawable/homefill"
         android:title="@string/HOME"/>
+    <item
+        android:id="@+id/search"
+        android:icon="@drawable/homefill"
+        android:title="@string/SEARCH"/>
+    <item
+        android:id="@+id/recomendations"
+        android:icon="@drawable/homefill"
+        android:title="@string/RECOMMENDATIONS"/>
 
 </menu>
