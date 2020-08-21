@@ -4,15 +4,15 @@
     android:layout_height="match_parent">
 
     <item
-        android:id="@+id/home"
+        android:id="@+id/homeMenu"
         android:icon="@drawable/homefill"
         android:title="@string/HOME"/>
     <item
-        android:id="@+id/search"
+        android:id="@+id/searchMenu"
         android:icon="@drawable/homefill"
         android:title="@string/SEARCH"/>
     <item
-        android:id="@+id/recomendations"
+        android:id="@+id/recomendationsMenu"
         android:icon="@drawable/homefill"
         android:title="@string/RECOMMENDATIONS"/>
 
