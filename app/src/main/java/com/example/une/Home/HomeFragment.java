@@ -2,13 +2,27 @@ package com.example.une.Home;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.une.R;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,6 +39,8 @@ public class HomeFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private ListView listView;
+    private TextView textView;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -61,6 +77,32 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+
+//        return inflater.inflate(R.layout.fragment_home, container, false);
+
+        View rootView = inflater.inflate(R.layout.fragment_home, container, false);
+
+        listView = (ListView) rootView.findViewById(R.id.genres);
+        textView = (TextView) rootView.findViewById(R.id.temp_text);
+        String[] tmpListItem = getResources().getStringArray(R.array.tmp_array);
+
+        List<String> tmpL = new ArrayList<String>();
+        tmpL.add(tmpListItem[0]);
+        tmpL.add(tmpListItem[1]);
+
+        final ArrayAdapter<String> adp =
+                new ArrayAdapter<>(this.getContext(), android.R.layout.simple_list_item_1,android.R.id.text1,tmpL);
+
+        listView.setAdapter(adp);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String value = adp.getItem(position);
+                Toast.makeText(getActivity().getApplicationContext(),value,Toast.LENGTH_LONG);
+            }
+        });
+
+        return rootView;
     }
+
 }

@@ -94,4 +94,10 @@
     <string name="SEARCH">Search</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="tmp_array">
+        <item>Fiction</item>
+        <item>Horror</item>
+        <item>Classics</item>
+    </string-array>
 </resources>
